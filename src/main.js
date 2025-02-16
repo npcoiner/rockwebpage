@@ -44,11 +44,11 @@ form.addEventListener("submit", async function(e) {
         }
 
         const data = await response.json();
-        resultContainer.textContent = data.response || "*the rock is not currently running on any of the stupidly expensive gpu networks (i.e. my personal computer)*"; 
+        resultContainer.textContent = data.response || "*ruh roh (error)*"; 
 
     } catch (error) {
         console.log(error.message)
-        resultContainer.textContent = "Error: " + error.message;
+        resultContainer.textContent = "*the rock is currently sleeping*";
     }
     inputField.disabled = false;
     inputField.value = ""; 
