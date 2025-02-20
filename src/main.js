@@ -3,6 +3,8 @@ import './style.css';
 const inputField = document.getElementById("input");
 const form = document.getElementById("form");
 const resultContainer = document.getElementById("result"); 
+const lastMessage = document.getElementById("lastMessage"); 
+
 
 inputField.addEventListener("focus", function() {
     if (this.value === "talk to the rock") {
@@ -23,7 +25,7 @@ form.addEventListener("submit", async function(e) {
     const userInput = inputField.value.trim();
     if (!userInput) return; 
     inputField.disabled = true;
-
+    lastMessage.textContent = userInput;
     try {
         const response = await fetch("https://ollama.nicholascoiner.com/api/generate", { 
             method: "POST",
